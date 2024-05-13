@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rive_animation/screens/Services/services_screen.dart';
+import 'package:rive_animation/screens/login/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           errorBorder: defaultInputBorder,
         ),
       ),
-      home: const ServiceSelectionPage(),
+      home: const LoginScreen(),
     );
   }
 }

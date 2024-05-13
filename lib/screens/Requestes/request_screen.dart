@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:rive_animation/model/inmobiliria.dart';
 
 class TimelinePage extends StatefulWidget {
@@ -9,6 +11,8 @@ class TimelinePage extends StatefulWidget {
 }
 
 class _TimelinePageState extends State<TimelinePage> {
+
+  TextEditingController _controller = TextEditingController();
   late UserRent _rents;
 
   @override
@@ -90,6 +94,35 @@ class _TimelinePageState extends State<TimelinePage> {
                               );
                             }).toList(),
                           ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 300,
+                                child: TextFormField(
+                                  controller: _controller,
+                                  decoration: const InputDecoration(
+                                    hintText: "Escribe tu solicitud",
+                                  ),
+                                  validator: (value) {
+                                    if (value == null || value.isEmpty) {
+                                      return 'No esta enviando nada';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                              ElevatedButton.icon(
+                                onPressed:() {
+                                  
+                                },
+                                icon: const Icon(Icons.upload),
+                                label: Text("Hola"),
+                                style:ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.red
+                                ),
+                              )
+                            ],
+                          )
                         ],
                       ],
                     ),

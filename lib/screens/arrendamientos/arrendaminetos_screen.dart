@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rive_animation/model/inmobiliria.dart';
 import 'package:rive_animation/screens/arrendamientos/details_arren_screen.dart';
+import 'package:rive_animation/screens/arrendamientos/months_screen.dart';
 
 class ArrendamientosScreen extends StatefulWidget {
   const ArrendamientosScreen({Key? key}) : super(key: key);
@@ -55,7 +56,12 @@ class _ArrendamientosScreenState extends State<ArrendamientosScreen> {
                 child: const Text("Ver Plan de Pagos"),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => ResumenArrendamiento()
+                    )
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(255, 19, 98, 172),
                   padding: const EdgeInsets.all(5),
